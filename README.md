@@ -9,7 +9,7 @@ O projeto é desenvolvido a partir do curso <a href="https://www.udemy.com/cours
 
 ```bash
 # Clone o Repositório
-$ https://github.com/jardelmitermayer/cadastroLaravelPHP.git
+$ https://github.com/jardelmitermayer/Relationship-OneToOneLaravel.git
 ```
 
 ```bash
