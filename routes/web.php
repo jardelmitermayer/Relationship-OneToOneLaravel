@@ -48,3 +48,33 @@ Route::get('/enderecos', function () {
         echo "<hr>";
     }
 });
+
+Route::get('/inserir', function () {
+    $cliente = new Cliente();
+    $cliente->nome = "Jose Almeida";
+    $cliente->telefone = "11 97844-4541";
+    $cliente->save();
+    $end = new Endereco();
+    $end->rua = "Av nova";
+    $end->numero = 13;
+    $end->bairro = "Centro";
+    $end->cidade = "Sao Paulo";
+    $end->uf = "SP";
+    $end->cep = "59525-021";
+
+    $cliente->endereco()->save($end);
+
+    $cliente = new Cliente();
+    $cliente->nome = "Antonio Barroso";
+    $cliente->telefone = "11 97844-4541";
+    $cliente->save();
+    $end = new Endereco();
+    $end->rua = "Avenida Brasil";
+    $end->numero = 20;
+    $end->bairro = "Jardim Botanico";
+    $end->cidade = "Rio de Janeiro";
+    $end->uf = "RJ";
+    $end->cep = "21058-021";
+
+    $cliente->endereco()->save($end);
+});

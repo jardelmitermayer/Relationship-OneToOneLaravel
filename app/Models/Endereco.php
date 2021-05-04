@@ -9,6 +9,6 @@ class Endereco extends Model
 {
     use HasFactory;
     function cliente (){
-        return $this->belongsTo('App\Models\Cliente');
+        return $this->belongsTo('App\Models\Cliente', 'cliente_id');
     }
 }
