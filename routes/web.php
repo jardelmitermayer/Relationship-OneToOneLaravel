@@ -78,3 +78,15 @@ Route::get('/inserir', function () {
 
     $cliente->endereco()->save($end);
 });
+
+Route::get('/clientes/json', function () {
+    //$clientes = Cliente::all(); -- lazy loading
+    $clientes = Cliente::with(['endereco'])->get(); //pegando dados do relacionamento endereço junto com o cliente -- eager loading
+    return $clientes->toJson();
+});
+
+Route::get('/enderecos/json', function () {
+    //$enderecos = Endereco::all(); 
+    $enderecos = Endereco::with(['cliente'])->get(); 
+    return $enderecos->toJson();
+});
